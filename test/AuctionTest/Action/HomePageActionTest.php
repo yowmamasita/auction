@@ -1,8 +1,8 @@
 <?php
 
-namespace AppTest\Action;
+namespace AuctionTest\Action;
 
-use App\Action\HomePageAction;
+use Auction\Action\HomePageAction;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 use Zend\Expressive\Router\RouterInterface;

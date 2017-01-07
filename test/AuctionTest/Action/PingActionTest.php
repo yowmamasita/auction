@@ -1,8 +1,8 @@
 <?php
 
-namespace AppTest\Action;
+namespace AuctionTest\Action;
 
-use App\Action\PingAction;
+use Auction\Action\PingAction;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 

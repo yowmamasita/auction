@@ -1,9 +1,9 @@
 <?php
 
-namespace AppTest\Action;
+namespace AuctionTest\Action;
 
-use App\Action\HomePageAction;
-use App\Action\HomePageFactory;
+use Auction\Action\HomePageAction;
+use Auction\Action\HomePageFactory;
 use Interop\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
