@@ -14,6 +14,6 @@ WORKDIR /var/www/html
 
 RUN composer install --no-interaction --no-progress --optimize-autoloader
 
-ENTRYPOINT ["/var/www/html/docker/entrypoint.sh"]
+ENTRYPOINT /var/www/html/docker/entrypoint.sh
 
 CMD php-fpm
