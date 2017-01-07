@@ -1,7 +1,8 @@
-FROM php:7.1-fpm
+FROM php:7.1.0-fpm-alpine
 
-RUN apt-get -y update && \
-    apt-get -y --no-install-recommends install \
+RUN apk update && \
+    apk add \
+        curl \
         git \
         unzip && \
     docker-php-ext-install pdo_mysql && \
@@ -11,8 +12,8 @@ ADD . /var/www/html
 
 WORKDIR /var/www/html
 
-RUN composer install --no-dev --no-interaction --no-progress --no-scripts --optimize-autoloader
+RUN composer install --no-interaction --no-progress --optimize-autoloader
 
-ENTRYPOINT ["/var/www/html/bin/entrypoint.sh"]
+ENTRYPOINT ["/var/www/html/docker/entrypoint.sh"]
 
 CMD php-fpm
