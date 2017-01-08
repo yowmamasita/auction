@@ -4,5 +4,12 @@
                    https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
     <entity name="Auction\Domain\Entity\Product">
         <id name="id" type="uuid"/>
+        <field name="name" type="string"/>
+        <field name="cost" type="float"/>
+        <field name="createdAt" type="datetimetz"/>
+        <many-to-one field="createdBy" target-entity="Auction\Domain\Entity\User"/>
+        <field name="updatedAt" type="datetimetz"/>
+        <many-to-one field="updatedBy" target-entity="Auction\Domain\Entity\User"/>
+        <one-to-many field="auctions" target-entity="Auction\Domain\Entity\Auction" mapped-by="product" />
     </entity>
 </doctrine-mapping>
