@@ -4,5 +4,14 @@
                    https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
     <entity name="Auction\Domain\Entity\Auction">
         <id name="id" type="uuid"/>
+        <field name="name" type="string"/>
+        <many-to-one field="product" target-entity="Auction\Domain\Entity\Product" inversed-by="auctions"/>
+        <field name="targetReturn" type="float"/>
+        <embedded name="status" class="Auction\Domain\ValueObject\AuctionStatus"/>
+        <one-to-one field="result" target-entity="Auction\Domain\Entity\AuctionResult" mapped-by="auction"/>
+        <field name="createdAt" type="datetimetz"/>
+        <many-to-one field="createdBy" target-entity="Auction\Domain\Entity\User"/>
+        <field name="updatedAt" type="datetimetz"/>
+        <many-to-one field="updatedBy" target-entity="Auction\Domain\Entity\User"/>
     </entity>
 </doctrine-mapping>
