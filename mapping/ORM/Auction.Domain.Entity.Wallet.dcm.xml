@@ -2,11 +2,13 @@
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                    https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
-    <entity name="Auction\Domain\Entity\User">
+    <entity name="Auction\Domain\Entity\Wallet">
         <id name="id" type="uuid"/>
-        <field name="email" type="string"/>
-        <field name="password" type="string"/>
-        <one-to-many field="bids" target-entity="Auction\Domain\Entity\Bid" mapped-by="createdBy" />
-        <one-to-many field="wallets" target-entity="Auction\Domain\Entity\Wallet" mapped-by="createdBy" />
+        <many-to-one field="createdBy" target-entity="Auction\Domain\Entity\User" inversed-by="wallets"/>
+        <field name="initialAmount" type="int"/>
+        <field name="remainingAmount" type="int"/>
+        <field name="pricePaid" type="float"/>
+        <field name="returnPerUnit" type="float"/>
+        <field name="createdAt" type="datetimetz"/>
     </entity>
 </doctrine-mapping>

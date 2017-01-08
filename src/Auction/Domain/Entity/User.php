@@ -35,6 +35,10 @@ class User
      * @var ArrayCollection
      */
     private $bids;
+    /**
+     * @var ArrayCollection
+     */
+    private $wallets;
 
     /**
      * User constructor.
@@ -48,6 +52,7 @@ class User
         $this->password = $password;
         $this->createdAt = new DateTime();
         $this->bids = new ArrayCollection();
+        $this->wallets = new ArrayCollection();
     }
 
     /**
@@ -112,5 +117,21 @@ class User
     public function setBids(ArrayCollection $bids)
     {
         $this->bids = $bids;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getWallets(): ArrayCollection
+    {
+        return $this->wallets;
+    }
+
+    /**
+     * @param ArrayCollection $wallets
+     */
+    public function setWallets(ArrayCollection $wallets)
+    {
+        $this->wallets = $wallets;
     }
 }

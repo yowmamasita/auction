@@ -4,7 +4,7 @@
 
 ## How it works
 
-Create a `Product` and specify its `name` and `cost`. And then from it, create an `Auction`. The `Auction` also has a `name`, `targetReturn` and the `scaleLimit`. The product you associate with an auction will be the auction's prize. The `scaleLimit` is the max amount of digits on the right of a decimal point. The product's `cost` and the auction's `targetReturn` both denotes monetary figures for the auction business - expense and revenue. It will allow the auction business to become *deterministic* in nature.
+Create a `Product` and specify its `name` and `cost`. And then from it, create an `Auction`. The `Auction` also has a `name`, `targetReturn` and `scaleLimit`. The product you associate with an auction will be the auction's prize. The `scaleLimit` is the max amount of digits on the right of a decimal point. The product's `cost` and the auction's `targetReturn` both denotes monetary figures for the auction business - expense and revenue. It will allow the auction business to become *deterministic* in nature.
 
 ### Product's `cost` vs. Auction's `targetReturn`
 

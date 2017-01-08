@@ -9,6 +9,7 @@
 namespace Auction\Service;
 
 
+use Auction\Domain\Entity\Bid;
 use Auction\Throwable\InsufficientBalanceException;
 use Auction\Throwable\InvalidActionException;
 use Auction\Throwable\AuctionNotFoundException;
@@ -21,6 +22,7 @@ interface BidServiceInterface
      * @throws InsufficientBalanceException
      * @throws InvalidActionException
      * @throws AuctionNotFoundException
+     * @return Bid
      */
-    public function bidOnAuction(UuidInterface $auctionId): void;
+    public function bidOnAuction(UuidInterface $auctionId): Bid;
 }

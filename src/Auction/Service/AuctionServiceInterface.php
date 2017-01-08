@@ -26,5 +26,5 @@ interface AuctionServiceInterface
      * @param UuidInterface $auctionId
      * @throws AuctionNotFoundException
      */
-    public function returnAllBids(UuidInterface $auctionId): void;
+    public function returnAllBidsToUsers(UuidInterface $auctionId): void;
 }
