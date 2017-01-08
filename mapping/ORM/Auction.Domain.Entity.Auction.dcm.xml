@@ -13,5 +13,6 @@
         <many-to-one field="createdBy" target-entity="Auction\Domain\Entity\User"/>
         <field name="updatedAt" type="datetimetz"/>
         <many-to-one field="updatedBy" target-entity="Auction\Domain\Entity\User"/>
+        <one-to-many field="bids" target-entity="Auction\Domain\Entity\Bid" mapped-by="auction" />
     </entity>
 </doctrine-mapping>
