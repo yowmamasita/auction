@@ -7,6 +7,8 @@
         <field name="name" type="string"/>
         <many-to-one field="product" target-entity="Auction\Domain\Entity\Product" inversed-by="auctions"/>
         <field name="targetReturn" type="float"/>
+        <field name="minimumBidValue" type="float"/>
+        <field name="maximumBidValue" type="float"/>
         <field name="scaleLimit" type="smallint"/>
         <embedded name="status" class="Auction\Domain\ValueObject\AuctionStatus"/>
         <one-to-one field="result" target-entity="Auction\Domain\Entity\AuctionResult" mapped-by="auction"/>

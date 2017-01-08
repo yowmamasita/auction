@@ -33,6 +33,14 @@ class Auction
      */
     private $targetReturn;
     /**
+     * @var float
+     */
+    private $minimumBidValue;
+    /**
+     * @var float
+     */
+    private $maximumBidValue;
+    /**
      * @var int
      */
     private $scaleLimit;
@@ -70,15 +78,26 @@ class Auction
      * @param string $name
      * @param Product $product
      * @param float $targetReturn
+     * @param float $minimumBidValue
+     * @param float $maximumBidValue
      * @param int $scaleLimit
      * @param User $createdBy
      */
-    public function __construct(string $name, Product $product, float $targetReturn, int $scaleLimit, User $createdBy)
+    public function __construct(
+        string $name,
+        Product $product,
+        float $targetReturn,
+        float $minimumBidValue,
+        float $maximumBidValue,
+        int $scaleLimit,
+        User $createdBy)
     {
         $this->id = Uuid::uuid4();
         $this->name = $name;
         $this->product = $product;
         $this->targetReturn = $targetReturn;
+        $this->minimumBidValue = $minimumBidValue;
+        $this->maximumBidValue = $maximumBidValue;
         $this->scaleLimit = $scaleLimit;
         $this->status = AuctionStatus::SCHEDULED;
         $this->createdBy = $createdBy;
@@ -140,6 +159,38 @@ class Auction
     public function setTargetReturn(float $targetReturn)
     {
         $this->targetReturn = $targetReturn;
+    }
+
+    /**
+     * @return float
+     */
+    public function getMinimumBidValue(): float
+    {
+        return $this->minimumBidValue;
+    }
+
+    /**
+     * @param float $minimumBidValue
+     */
+    public function setMinimumBidValue(float $minimumBidValue)
+    {
+        $this->minimumBidValue = $minimumBidValue;
+    }
+
+    /**
+     * @return float
+     */
+    public function getMaximumBidValue(): float
+    {
+        return $this->maximumBidValue;
+    }
+
+    /**
+     * @param float $maximumBidValue
+     */
+    public function setMaximumBidValue(float $maximumBidValue)
+    {
+        $this->maximumBidValue = $maximumBidValue;
     }
 
     /**
