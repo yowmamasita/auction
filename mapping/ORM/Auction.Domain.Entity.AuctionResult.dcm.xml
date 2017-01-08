@@ -4,5 +4,8 @@
                    https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
     <entity name="Auction\Domain\Entity\AuctionResult">
         <id name="id" type="uuid"/>
+        <one-to-one field="auction" target-entity="Auction\Domain\Entity\Auction" inversed-by="result"/>
+        <one-to-one field="winner" target-entity="Auction\Domain\Entity\Bid"/>
+        <field name="createdAt" type="datetimetz"/>
     </entity>
 </doctrine-mapping>
