@@ -4,5 +4,8 @@
                    https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
     <entity name="Auction\Domain\Entity\User">
         <id name="id" type="uuid"/>
+        <field name="email" type="string"/>
+        <field name="password" type="string"/>
+        <one-to-many field="bids" target-entity="Auction\Domain\Entity\Bid" mapped-by="createdBy" />
     </entity>
 </doctrine-mapping>
