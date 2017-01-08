@@ -5,6 +5,7 @@
     <entity name="Auction\Domain\Entity\Bid">
         <id name="id" type="uuid"/>
         <many-to-one field="auction" target-entity="Auction\Domain\Entity\Auction" inversed-by="bids"/>
+        <field name="value" type="float"/>
         <field name="return" type="float"/>
         <field name="createdAt" type="datetimetz"/>
         <many-to-one field="createdBy" target-entity="Auction\Domain\Entity\User" inversed-by="bids"/>

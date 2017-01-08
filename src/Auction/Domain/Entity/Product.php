@@ -54,7 +54,7 @@ class Product
      * @param float $cost
      * @param User $createdBy
      */
-    public function __construct($name, $cost, User $createdBy)
+    public function __construct(string $name, float $cost, User $createdBy)
     {
         $this->id = Uuid::uuid4();
         $this->name = $name;

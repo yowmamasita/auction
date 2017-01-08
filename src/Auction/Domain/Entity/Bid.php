@@ -25,6 +25,10 @@ class Bid
     /**
      * @var float
      */
+    private $value;
+    /**
+     * @var float
+     */
     private $return;
     /**
      * @var User
@@ -38,13 +42,15 @@ class Bid
     /**
      * Bid constructor.
      * @param Auction $auction
+     * @param float $value
      * @param float $return
      * @param User $createdBy
      */
-    public function __construct(Auction $auction, $return, User $createdBy)
+    public function __construct(Auction $auction, float $value, float $return, User $createdBy)
     {
         $this->id = Uuid::uuid4();
         $this->auction = $auction;
+        $this->value = $value;
         $this->return = $return;
         $this->createdBy = $createdBy;
         $this->createdAt = new DateTime();
@@ -72,6 +78,22 @@ class Bid
     public function setAuction(Auction $auction)
     {
         $this->auction = $auction;
+    }
+
+    /**
+     * @return float
+     */
+    public function getValue(): float
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param float $value
+     */
+    public function setValue(float $value)
+    {
+        $this->value = $value;
     }
 
     /**

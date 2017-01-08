@@ -33,6 +33,10 @@ class Auction
      */
     private $targetReturn;
     /**
+     * @var int
+     */
+    private $scaleLimit;
+    /**
      * @var AuctionStatus
      */
     private $status;
@@ -66,14 +70,16 @@ class Auction
      * @param string $name
      * @param Product $product
      * @param float $targetReturn
+     * @param int $scaleLimit
      * @param User $createdBy
      */
-    public function __construct(string $name, Product $product, float $targetReturn, User $createdBy)
+    public function __construct(string $name, Product $product, float $targetReturn, int $scaleLimit, User $createdBy)
     {
         $this->id = Uuid::uuid4();
         $this->name = $name;
         $this->product = $product;
         $this->targetReturn = $targetReturn;
+        $this->scaleLimit = $scaleLimit;
         $this->status = AuctionStatus::SCHEDULED;
         $this->createdBy = $createdBy;
         $this->createdAt = new DateTime();
@@ -134,6 +140,22 @@ class Auction
     public function setTargetReturn(float $targetReturn)
     {
         $this->targetReturn = $targetReturn;
+    }
+
+    /**
+     * @return int
+     */
+    public function getScaleLimit(): int
+    {
+        return $this->scaleLimit;
+    }
+
+    /**
+     * @param int $scaleLimit
+     */
+    public function setScaleLimit(int $scaleLimit)
+    {
+        $this->scaleLimit = $scaleLimit;
     }
 
     /**

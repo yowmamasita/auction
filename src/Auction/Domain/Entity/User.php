@@ -41,7 +41,7 @@ class User
      * @param string $email
      * @param string $password
      */
-    public function __construct($email, $password)
+    public function __construct(string $email, string $password)
     {
         $this->id = Uuid::uuid4();
         $this->email = $email;

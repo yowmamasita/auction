@@ -29,7 +29,7 @@ class AuctionStatus
      * AuctionStatus constructor.
      * @param string $name
      */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $constant = strtoupper($name);
         if (! defined('self::' . $constant)) {
