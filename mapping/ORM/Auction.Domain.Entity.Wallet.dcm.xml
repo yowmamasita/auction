@@ -8,7 +8,7 @@
         <field name="initialCredits" type="int"/>
         <field name="remainingCredits" type="int"/>
         <field name="pricePaid" type="float"/>
-        <field name="returnPerUnit" type="float"/>
+        <field name="returnPerCredit" type="float"/>
         <field name="createdAt" type="datetimetz"/>
     </entity>
 </doctrine-mapping>

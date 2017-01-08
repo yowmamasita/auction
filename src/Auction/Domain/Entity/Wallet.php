@@ -33,7 +33,7 @@ class Wallet
     /**
      * @var float
      */
-    private $returnPerUnit;
+    private $returnPerCredit;
     /**
      * @var User
      */
@@ -55,7 +55,7 @@ class Wallet
         $this->initialCredits = $initialCredits;
         $this->remainingCredits = $initialCredits;
         $this->pricePaid = $pricePaid;
-        $this->returnPerUnit = round($pricePaid / $initialCredits, 2);
+        $this->returnPerCredit = round($pricePaid / $initialCredits, 2);
         $this->createdBy = $createdBy;
         $this->createdAt = new DateTime();
     }
@@ -103,9 +103,9 @@ class Wallet
     /**
      * @return float
      */
-    public function getReturnPerUnit(): float
+    public function getReturnPerCredit(): float
     {
-        return $this->returnPerUnit;
+        return $this->returnPerCredit;
     }
 
     /**
