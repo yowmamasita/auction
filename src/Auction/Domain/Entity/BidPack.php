@@ -20,7 +20,7 @@ class BidPack
     /**
      * @var int
      */
-    private $amount;
+    private $credits;
     /**
      * @var float
      */
@@ -28,13 +28,13 @@ class BidPack
 
     /**
      * BidPack constructor.
-     * @param int $amount
+     * @param int $credits
      * @param float $price
      */
-    public function __construct(int $amount, float $price)
+    public function __construct(int $credits, float $price)
     {
         $this->id = Uuid::uuid4();
-        $this->amount = $amount;
+        $this->credits = $credits;
         $this->price = $price;
     }
 
@@ -49,17 +49,17 @@ class BidPack
     /**
      * @return int
      */
-    public function getAmount(): int
+    public function getCredits(): int
     {
-        return $this->amount;
+        return $this->credits;
     }
 
     /**
-     * @param int $amount
+     * @param int $credits
      */
-    public function setAmount(int $amount)
+    public function setCredits(int $credits)
     {
-        $this->amount = $amount;
+        $this->credits = $credits;
     }
 
     /**

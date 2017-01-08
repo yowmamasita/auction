@@ -4,7 +4,7 @@
                    https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
     <entity name="Auction\Domain\Entity\BidPack">
         <id name="id" type="uuid"/>
-        <field name="amount" type="int"/>
+        <field name="credits" type="int"/>
         <field name="price" type="float"/>
     </entity>
 </doctrine-mapping>

@@ -5,8 +5,8 @@
     <entity name="Auction\Domain\Entity\Wallet">
         <id name="id" type="uuid"/>
         <many-to-one field="createdBy" target-entity="Auction\Domain\Entity\User" inversed-by="wallets"/>
-        <field name="initialAmount" type="int"/>
-        <field name="remainingAmount" type="int"/>
+        <field name="initialCredits" type="int"/>
+        <field name="remainingCredits" type="int"/>
         <field name="pricePaid" type="float"/>
         <field name="returnPerUnit" type="float"/>
         <field name="createdAt" type="datetimetz"/>

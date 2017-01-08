@@ -21,11 +21,11 @@ class Wallet
     /**
      * @var int
      */
-    private $initialAmount;
+    private $initialCredits;
     /**
      * @var int
      */
-    private $remainingAmount;
+    private $remainingCredits;
     /**
      * @var float
      */
@@ -45,17 +45,17 @@ class Wallet
 
     /**
      * Wallet constructor.
-     * @param int $initialAmount
+     * @param int $initialCredits
      * @param float $pricePaid
      * @param User $createdBy
      */
-    public function __construct(int $initialAmount, float $pricePaid, User $createdBy)
+    public function __construct(int $initialCredits, float $pricePaid, User $createdBy)
     {
         $this->id = Uuid::uuid4();
-        $this->initialAmount = $initialAmount;
-        $this->remainingAmount = $initialAmount;
+        $this->initialCredits = $initialCredits;
+        $this->remainingCredits = $initialCredits;
         $this->pricePaid = $pricePaid;
-        $this->returnPerUnit = round($pricePaid / $initialAmount, 2);
+        $this->returnPerUnit = round($pricePaid / $initialCredits, 2);
         $this->createdBy = $createdBy;
         $this->createdAt = new DateTime();
     }
@@ -71,25 +71,25 @@ class Wallet
     /**
      * @return int
      */
-    public function getInitialAmount(): int
+    public function getInitialCredits(): int
     {
-        return $this->initialAmount;
+        return $this->initialCredits;
     }
 
     /**
      * @return int
      */
-    public function getRemainingAmount(): int
+    public function getRemainingCredits(): int
     {
-        return $this->remainingAmount;
+        return $this->remainingCredits;
     }
 
     /**
-     * @param int $remainingAmount
+     * @param int $remainingCredits
      */
-    public function setRemainingAmount(int $remainingAmount)
+    public function setRemainingCredits(int $remainingCredits)
     {
-        $this->remainingAmount = $remainingAmount;
+        $this->remainingCredits = $remainingCredits;
     }
 
     /**
